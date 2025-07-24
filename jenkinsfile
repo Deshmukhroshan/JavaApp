@@ -21,10 +21,10 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('MySonarQube') {
-                    sh 'mvn sonar:sonar'
+                withSonarQubeEnv('sonar-api') {
+                    sh 'mvn sonar:sonar -Dsonar.projectKey=JavaApp'
                 }
-            }
+            }i
         }
         stage('Docker Build') {
             steps {
