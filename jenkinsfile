@@ -24,7 +24,7 @@ pipeline {
                 withSonarQubeEnv('sonar-api') {
                     sh 'mvn sonar:sonar -Dsonar.projectKey=JavaApp'
                 }
-            }i
+            }
         }
         stage('Docker Build') {
             steps {
@@ -47,4 +47,3 @@ pipeline {
         }
     }
 }
-
